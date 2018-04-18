@@ -1,6 +1,7 @@
 
 package arraylist_mobilephonecrudcontactnames;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +10,32 @@ public class Main {
     private static MobilePhone mobilePhone = new MobilePhone("0046 946 8408");
     
     public static void main(String[] args) {
+        
+    Integer myIntValue = 56; //in compile time is equal to: Integer.valueOf(56);
+    int myInt = myIntValue; //is equal to --> myIntValue.intValue();     (intValue is returning int)
+    
+    ArrayList<Integer> intArrayList = new ArrayList<Integer>();
+    for(int i=0; i<=10; i++){
+        intArrayList.add(Integer.valueOf(i));//AUTOBOXING, converting from primitive to Integer class
+    }
+    
+    for(int i=0; i<=10; i++){
+        //System.out.println(i + " --> " + intArrayList.get(i).intValue()); //UNBOXING, converting from Integer class to primitive type
+        
+     
+        ArrayList<Double> myDoubleValues = new ArrayList<Double>();
+        for (double dbl = 0.0; dbl <= 10.0; dbl+= 0.5) {
+            myDoubleValues.add(Double.valueOf(dbl));//from primitiv to Double, AUTOBOXING
+        }
+        
+        for (int j=0; j<= myDoubleValues.size(); j++) {
+            double value = myDoubleValues.get(j).doubleValue();
+            System.out.println(i + " --> " + value);//UNBOXING
+        }
+        
+    //even without   .valueOf() and .doubleValue(), the code is working the same
+        
+        
         
         boolean quit = false;
         startPhone();
